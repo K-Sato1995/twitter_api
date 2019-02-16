@@ -1,5 +1,6 @@
 require 'countdown_timer'
 require 'twitter'
+require 'spell_generator'
 require_relative 'keys.rb'
 
 client = Twitter::REST::Client.new do |config|
@@ -9,5 +10,6 @@ client = Twitter::REST::Client.new do |config|
   config.access_token_secret = ACCESS_SECRET
 end
 
-countdown = CountdownTimer::Timer.set_timer(2018, 11, 16)
-client.update("I will see you in #{countdown}")
+# countdown = CountdownTimer::Timer.set_timer(2018, 11, 16)
+spell = SpellGenerator::Generator.generate
+client.update(spell)
