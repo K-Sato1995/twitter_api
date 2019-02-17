@@ -13,3 +13,4 @@ end
 # countdown = CountdownTimer::Timer.set_timer(2018, 11, 16)
 spell = SpellGenerator::Generator.generate
 client.update(spell)
+client.search("#ruby").first.text
